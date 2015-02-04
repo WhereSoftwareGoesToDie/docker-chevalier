@@ -32,7 +32,7 @@ VOLUME ["/data"]
 
 WORKDIR /data
 
-CMD ["/elasticsearch/bin/elasticsearch"]
-
 EXPOSE 9200
 EXPOSE 9300
+
+CMD ["/elasticsearch/bin/elasticsearch"]
