@@ -1,8 +1,6 @@
 FROM debian:wheezy
 MAINTAINER engineering@anchor.net.au
 
-# I
-
 # Install  GoLang 1.2.2
 # From Dockerfile for docker-library/golang
 #   https://github.com/docker-library/golang/blob/master/1.4/wheezy/Dockerfile
@@ -65,4 +63,9 @@ RUN cd src/github.com/anchor/chevalier && make all
 
 EXPOSE 6283
 EXPOSE 6284
+
+ADD docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+ADD chevalier.gcfg /etc/chevalier.gcfg
 

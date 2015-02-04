@@ -30,6 +30,8 @@ RUN \
 
 VOLUME ["/data"]
 
+ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+
 WORKDIR /data
 
 EXPOSE 9200
