@@ -7,8 +7,8 @@ loglevel = "info"
 [elasticsearch]
 # Assumes port 9200.
 host = "localhost"
-index = "chevalier_XX"
-metadataindex = "chevalier_XX"
+index = "chevalier_xx"
+metadataindex = "chevalier_xx_meta"
 datatype = "datasource"
 maxconns = 4
 retryseconds = 10
