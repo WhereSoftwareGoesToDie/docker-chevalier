@@ -105,4 +105,4 @@ discovery.zen.ping.interval: 1s
 discovery.zen.ping.multicast.enabled: false
 
 discovery.zen.ping.unicast.hosts:
-    - "chevalier-XX.localhost"
+    - "chevalier-XX.local"
