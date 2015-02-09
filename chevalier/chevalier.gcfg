@@ -15,7 +15,7 @@ retryseconds = 10
 
 [vaultaire]
 # Endpoint for a contents read.
-contentsendpoint = tcp://chateau-XX.local:5580
+contentsendpoint = "tcp://chateau-XX.local:5580"
 # Origins to request from Vaultaire. 
 origins = PONIES
 
