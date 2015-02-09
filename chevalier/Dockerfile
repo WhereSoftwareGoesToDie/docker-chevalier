@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 	pkg-config \
 	wget
 
-RUN curl http://storage.googleapis.com/golang/go1.2.2.src.tar.gz | tar -v -C /usr/src -xz
+RUN curl https://storage.googleapis.com/golang/go1.4.1.src.tar.gz | tar -v -C /usr/src -xz
 
 RUN cd /usr/src/go/src && ./make.bash --no-clean 2>&1
 
