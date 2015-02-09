@@ -1,0 +1,24 @@
+[chevalier]
+# Address to listen for requests on. This is a ZeroMQ URI.
+listenaddress = "tcp://*:6283"
+statusaddress = "tcp://*:6284"
+loglevel = "info"
+
+[elasticsearch]
+# Assumes port 9200.
+host = "localhost"
+index = "chevalier_xx"
+metadataindex = "chevalier_xx_meta"
+datatype = "datasource"
+maxconns = 4
+retryseconds = 10
+
+[vaultaire]
+# Endpoint for a contents read.
+contentsendpoint = tcp://chateau-XX.local:5580
+# Origins to request from Vaultaire. 
+origins = PONIES
+
+[indexer]
+parallelism=1
+indexinterval = 300
