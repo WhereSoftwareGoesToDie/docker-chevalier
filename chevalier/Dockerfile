@@ -65,6 +65,5 @@ EXPOSE 6283
 EXPOSE 6284
 
 ADD docker-entrypoint.sh /entrypoint.sh
-ADD chevalier.gcfg /etc/chevalier.gcfg
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -10,7 +10,7 @@ Docker build scripts for chevalier
     cd ..
 
     docker run -d --name es        --net=host -p 9200:9200 -p 9300:9300 -t anchor/es
-    docker run -d --name chevalier --net=host -p 6283:6283 -p 6284:6284 -t anchor/chevalier
+    docker run -d --name chevalier --net=host -p 6283:6283 -p 6284:6284 -v <configfile>:/etc/chevalier.gcfg -t anchor/chevalier
 
     # then, invoke anchor/docker-sieste
     docker run    --name sieste    --net=host -p 8000:8000                 anchor/sieste /bin/bash
