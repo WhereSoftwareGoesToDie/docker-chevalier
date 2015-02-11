@@ -6,7 +6,7 @@ MAINTAINER engineering@anchor.net.au
 # Wheezy + Java8 - http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
 #
 
-RUN apt-get update && apt-get install -y build-essential openssl ca-certificates 
+RUN apt-get update && apt-get install -y build-essential openssl ca-certificates
 
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee /etc/apt/sources.list.d/webupd8team-java.list
 RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
@@ -27,14 +27,19 @@ RUN \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
 
-
 VOLUME ["/data"]
+WORKDIR /data
 
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
-WORKDIR /data
-
 EXPOSE 9200
 EXPOSE 9300
+
+# Retrieve github.com/anchor/elasticsearch-scripts and place them in /usr/local/sbin
+RUN \
+  cd / && \
+  wget https://github.com/anchor/elasticsearch-scripts/archive/v1.0.1.tar.gz -q \
+	-O es-scripts-1.0.1.tar.gz && \
+  tar xvzf es-scripts-1.0.1.tar.gz -C /usr/local/sbin --strip 1
 
 CMD ["/elasticsearch/bin/elasticsearch"]
