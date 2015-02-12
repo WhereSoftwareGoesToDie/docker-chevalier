@@ -35,11 +35,7 @@ ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 EXPOSE 9200
 EXPOSE 9300
 
-# Retrieve github.com/anchor/elasticsearch-scripts and place them in /usr/local/sbin
-RUN \
-  cd / && \
-  wget https://github.com/anchor/elasticsearch-scripts/archive/v1.0.1.tar.gz -q \
-	-O es-scripts-1.0.1.tar.gz && \
-  tar xvzf es-scripts-1.0.1.tar.gz -C /usr/local/sbin --strip 1
+RUN apt-get update && apt-get install python python-pip -y --no-install-recommends
+RUN pip install elasticsearch-scripts
 
 CMD ["/elasticsearch/bin/elasticsearch"]
