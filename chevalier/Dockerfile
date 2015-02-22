@@ -64,6 +64,5 @@ RUN cd src/github.com/anchor/chevalier && make all
 EXPOSE 6283
 EXPOSE 6284
 
-ADD docker-entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+# To invoke: 
+#  docker run anchor/chevalier chevalier -d read -cfg /path/to/chevalier.gcfg

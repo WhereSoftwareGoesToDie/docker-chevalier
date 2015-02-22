@@ -38,4 +38,6 @@ EXPOSE 9300
 RUN apt-get update && apt-get install python python-pip -y --no-install-recommends
 RUN pip install elasticsearch-scripts
 
-CMD ["/elasticsearch/bin/elasticsearch"]
+# To invoke elastic search: 
+#   docker run anchor/elasticserach /elasticsearch/bin/elasticsearch
+
